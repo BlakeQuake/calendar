@@ -11,9 +11,12 @@
 
 
 
-var momentTimer = moment().format('MMM do YYYY, h:mm:ss a');
+// Javascript vanilla way
 var currentDay = document.querySelector("#currentDay");
 
+// jQuery way
+var momentTimer = moment().format('MMM do YYYY, h:mm:ss a');
+var currentDay = $("#currentDay")
+$("#currentDay").append(momentTimer)
+console.log(momentTimer)
 
-function$(currentDay).append(momentTimer)
-console.log(currentDay)
