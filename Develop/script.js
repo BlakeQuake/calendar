@@ -36,7 +36,7 @@ $(".saveBtn").on("click", function() {
     localStorage.setItem(time, actualTime);
 })
 
-function text () {
+function timeLoop () {
     for (var i = 0; i < 18; i++){
         var savedTime = localStorage.getItem(i + "")
         if (savedTime !== null) {
@@ -44,4 +44,4 @@ function text () {
         }
     }
 }
-text()
+timeLoop()
