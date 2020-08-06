@@ -1,10 +1,3 @@
-
-// counter with current date and timer (moment.js)
-// place cunter inside the jumbotron
-// if statement - if .hour = currenttime, then present(red).
-// else if .hour > currentime, then future (green).
-// else if .hour < currentime time, then past (gray)
-
 // // Javascript vanilla way
 // var currentDay = document.querySelector("#currentDay");
 
@@ -20,7 +13,8 @@ console.log(momentTimer)
 var currentHour = moment().hour()
 console.log(moment().hour())
 
-for (var i = 0; i < 18; i++) {
+for (var i = 0; i < 18; i++) 
+{
     if (i < currentHour )
     {
         $("#" + i).addClass("past")
@@ -33,22 +27,21 @@ for (var i = 0; i < 18; i++) {
     }
 }
 
-
-var nine 
-var ten
-var eleven
-var twelve = ".twelve"
-var one
-var two
-var three
-var four
-var five 
-
 ///////////// LOCAL STORAGE ///////////////////
 
-localStorage.setItem(".twelve", twelve)
-console.log(twelve)
-
 $(".saveBtn").on("click", function() {
-    
+    var time = $(this).attr("data-time");
+    var actualTime = $("#" + time).val();
+    console.log(actualTime);
+    localStorage.setItem(time, actualTime);
 })
+
+function text () {
+    for (var i = 0; i < 18; i++){
+        var savedTime = localStorage.getItem(i + "")
+        if (savedTime !== null) {
+            $("#" + i + "").val(savedTime)
+        }
+    }
+}
+text()
